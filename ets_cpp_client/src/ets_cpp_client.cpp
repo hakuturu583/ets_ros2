@@ -18,7 +18,7 @@ int main(int argc, char * argv[])
   auto node = rclcpp::Node::make_shared("ets_client");
 
   auto sub = node->create_subscription<ets_msgs::msg::Truck>(
-    "truck", callback, rmw_qos_profile_default);
+    "truck", 1, callback);
 
   rclcpp::spin(node);
 

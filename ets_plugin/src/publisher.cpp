@@ -6,7 +6,7 @@ class Publisher : public rclcpp::Node
 public:
 	Publisher() : Node("ets_telemetry")
 	{
-		publisher_ = this->create_publisher<ets_msgs::msg::Truck>("truck");
+		publisher_ = this->create_publisher<ets_msgs::msg::Truck>("truck", 1);
 	}
 
 	void sendOdometry(float speed, float acc_x, float acc_y, float acc_z, float rpm, int gear, bool engine_running,
